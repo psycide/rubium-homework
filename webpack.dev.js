@@ -1,3 +1,5 @@
+const path = require("path");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -10,10 +12,14 @@ module.exports = {
     index: "./src/main.js",
   },
 
+  output: {
+    path: path.resolve(__dirname, "assets"),
+  },
+
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
     port: 8080,
-    writeToDisk: false, // https://webpack.js.org/configuration/dev-server/#devserverwritetodisk-
+    writeToDisk: true, // https://webpack.js.org/configuration/dev-server/#devserverwritetodisk-
   },
 
   // https://webpack.js.org/concepts/loaders/
@@ -61,7 +67,7 @@ module.exports = {
   // https://webpack.js.org/concepts/plugins/
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/index.pug",
       inject: true,
       chunks: ["index"],
       filename: "index.html",
