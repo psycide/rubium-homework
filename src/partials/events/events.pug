@@ -1,0 +1,15 @@
+section.events
+    h2.events__title Календарь мероприятий
+    .events__content
+        include ../calendar/calendar.pug
+        .events-container
+            .event.events__item
+                p.event__time 10:00
+                h3.event__title Детский мастер-класс
+                p.event__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            .event.events__title
+                img.event__bg-img(src='./src/img/placeholder.png', alt='event-bg')
+                p.event__time 19:00
+                h3.event__title Джазовый концерт
+                p.event__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            a.events__link(href='') Все ближайшие события >>

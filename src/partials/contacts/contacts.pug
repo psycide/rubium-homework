@@ -1,0 +1,20 @@
+section.contacts
+    h2.contacts__title
+    .contacts__content
+        ul.contacts-list.contacts__item
+            li.contacts-list__item
+                img.contacts-list__icon(src='./src/svg/icon-call-grey.svg')
+                a.contacts-list__link(href='mailto:hello@mymeal.ru') hello@mymeal.ru
+            li.contacts-list__item
+                img.contacts-list__icon(src='./src/svg/icon-call-grey.svg')
+                a.contacts-list__link(href='') @mymeal
+            li.contacts-list__item
+                img.contacts-list__icon(src='./src/svg/icon-call-grey.svg')
+                a.contacts-list__link(href='tel:+7 (938)833 24 15') +7 (938)833 24 15
+        form.feedback
+            .feedback__row
+                input.feedback__input(type="text", placeholder='Ваше имя')
+                input.feedback__input(type="text", placeholder='Номер телефона')
+            input.feedback__input.feedback__input_big(type="text", placeholder='Сообщение')
+            button.feedback__button заказать
+            
