@@ -1,0 +1,64 @@
+.nav {
+  background-color: rgba($color: #252525, $alpha: 0.75);
+  border-radius: 6px;
+
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    height: 91px;
+    padding: 0 73px;
+  }
+
+  &__logo {
+    width: 266px;
+  }
+// съезжаются элементы меню при уменьшении ширины
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 448px;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: Alegreya SC;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height, or 100% */
+
+    color: #ffffff;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  &__img {
+    position: relative;
+    top: -5%;
+  }
+
+  &__text {
+    font-family: Alegreya;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 14px;
+    /* identical to box height, or 58% */
+
+    text-transform: uppercase;
+
+    color: #34c759;
+  }
+}

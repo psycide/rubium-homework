@@ -1,3 +1,7 @@
 section.header
-    h1(class='header__title') Доставка свежей и горячей еды в течение  40 минут
-    include ../communications/communications.pug
+    img.header__background(src='./src/img/background.png', alt='backgound')
+    include ../nav/nav.pug
+    .header-container.wrapper
+        h1.header__title Доставка свежей и горячей еды в течение  40 минут
+        include ../communications/communications.pug
+        include ../promo/promo.pug

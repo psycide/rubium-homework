@@ -1,7 +1,7 @@
 import { Bar } from "./js/bar.es6";
+require("normalize.css/normalize.css");
 import "./scss/main.scss";
 const { Foo } = require("./js/foo.cjs");
-require("normalize.css/normalize.css");
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded", "page-index");
