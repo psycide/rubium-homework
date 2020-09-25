@@ -1,2 +1,7 @@
-p hello
-    include ../nav/nav.html
+mixin chef(avatar, name, description)
+    li.chef
+        img.chef__avatar(src=avatar, alt='avatar')
+        .chef-container    
+            h3.chef__name= name
+            p.chef__description= description
+    

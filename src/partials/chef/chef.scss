@@ -1,0 +1,32 @@
+.chef {
+  display: flex;
+  align-items: center;
+
+  &-container {
+    margin-left: 24px;
+  }
+
+  &__name {
+    font-family: Alegreya;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.225px;
+
+    color: #ffffff;
+  }
+
+  &__description {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.15px;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

@@ -1,15 +1,8 @@
-section.best-chefs
+include ../chef/chef.pug
+
+section.best-chefs.wrapper
     h2.best-chefs__title Лучшие повара этого месяца
     ul.best-chefs__list
-        li.chef.best-chefs__item
-            img.chef__avatar(src='./src/img/avatar-1.png', alt='avatar')
-            h3.chef__name Григорий Ковалёв
-            p.chef__description Шеф холодного цеха
-        li.chef.best-chefs__item
-            img.chef__avatar(src='./src/img/avatar-2.png', alt='avatar')
-            h3.chef__name Наталья Орехова
-            p.chef__description Су-шеф горячего цеха
-        li.chef.best-chefs__item
-            img.chef__avatar(src='./src/img/avatar-3.png', alt='avatar')
-            h3.chef__name Олег Гилберт
-            p.chef__description Шеф-кондитер
+        +chef('./src/img/avatar-1.png', 'Григорий Ковалёв', 'Шеф холодного цеха')
+        +chef('./src/img/avatar-2.png', 'Наталья Орехова', 'Су-шеф горячего цеха')
+        +chef('./src/img/avatar-3.png', 'Олег Гилберт', 'Шеф-кондитер')

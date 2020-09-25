@@ -1,0 +1,38 @@
+@import "../chef/chef.scss";
+
+.best-chefs {
+  margin-top: 82px;
+
+  &__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #d9d9d9;
+  }
+
+  &__title::after {
+    display: block;
+    content: '';
+    width: 60px;
+    height: 0;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: #34C759 solid 1px;
+  }
+
+  &__list {
+    margin-top: 38px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    max-width: 951px;
+    justify-content: space-between;
+  }
+}
