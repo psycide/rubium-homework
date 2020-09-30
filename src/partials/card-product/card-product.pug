@@ -1,0 +1,8 @@
+mixin card-product(img, name, description, price)
+    .card-product
+            img.card-product__img(src=img)
+            h3.card-product__name= name
+            p.card-product__description= description
+            .card-product__row
+                p.card-product__price= price
+                button.card-product__button(type='button') в корзину

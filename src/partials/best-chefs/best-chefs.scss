@@ -4,6 +4,7 @@
   margin-top: 82px;
 
   &__title {
+    position: relative;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
@@ -17,18 +18,18 @@
   }
 
   &__title::after {
+    position: absolute;
     display: block;
     content: '';
     width: 60px;
     height: 0;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    left: calc(50% - 30px);
+    bottom: -20px;
     border: #34C759 solid 1px;
   }
 
   &__list {
-    margin-top: 38px;
+    margin-top: 58px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
