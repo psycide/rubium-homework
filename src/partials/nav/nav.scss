@@ -41,12 +41,11 @@
 .logo {
   display: flex;
   align-items: center;
-
   justify-content: space-between;
 
   &__img {
     position: relative;
-    top: -5%;
+    top: -5px;
   }
 
   &__text {
@@ -55,10 +54,7 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 14px;
-    /* identical to box height, or 58% */
-
     text-transform: uppercase;
-
     color: #34c759;
   }
 }
