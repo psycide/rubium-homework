@@ -18,6 +18,8 @@ module.exports = {
 
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
+    
+    host: '0.0.0.0',
     port: 8080,
     writeToDisk: true, // https://webpack.js.org/configuration/dev-server/#devserverwritetodisk-
   },

@@ -1,0 +1,47 @@
+.review {
+  background: #252525;
+  padding: 27px 20px 38px 20px;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__author {
+    font-family: Alegreya;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  &__date {
+    font-family: Alegreya;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #737373;
+  }
+
+  &__rating {
+    margin-top: 12px;
+  }
+
+  &__text {
+    margin-top: 12px;
+    max-width: 330px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: rgba(255, 255, 255, 0.75);
+  }
+}

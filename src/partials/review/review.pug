@@ -1,0 +1,12 @@
+mixin review(author, date, text)
+    div(class!= 'review ' + attributes.class)
+        .review__row
+            p.review__author= author
+            p.review__date= date
+        .review__rating
+            img.review__star(src='./src/svg/icon-star.svg')
+            img.review__star(src='./src/svg/icon-star.svg')
+            img.review__star(src='./src/svg/icon-star.svg')
+            img.review__star(src='./src/svg/icon-star.svg')
+            img.review__star(src='./src/svg/icon-star-empty.svg')
+        p.review__text= text
