@@ -1,0 +1,14 @@
+mixin event(bg, time, title, text)
+    div(class!= 'event ' + attributes.class) 
+        if bg  
+            img.event__bg-img(src=bg, alt='event-bg')
+        p.event__time= time
+        h3.event__title= title
+        p.event__text= text
+        .event__stat
+            .views.event__views
+                img.views__icon(src='./src/svg/icon-eye.svg')
+                p.views__count 275
+            .comments.event__comments
+                img.comments__icon(src='./src/svg/icon-comments.svg')
+                p.comments__count 15
