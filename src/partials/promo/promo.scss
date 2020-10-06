@@ -11,25 +11,15 @@
 
   &__title {
     margin-top: 40px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 44px;
-    /* identical to box height */
-
+    @include montserrat(600);
+    @include subtitle();
     text-transform: uppercase;
-
-    /* Primary */
-
     color: $primaryColor;
   }
 
   &__text {
     margin-top: 16px;
-    font-family: Alegreya;
-    font-style: normal;
-    font-weight: 500;
+    @include alegreya(500);
     font-size: 18px;
     line-height: 24px;
 
@@ -75,9 +65,7 @@
 
   &__title {
     margin-bottom: 8px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
+    @include montserrat(600);
     font-size: 14px;
     line-height: 17px;
     color: $secondaryColor;
@@ -85,31 +73,9 @@
 
   &__text {
     margin-bottom: 12px;
-    font-family: Alegreya;
-    font-style: normal;
-    font-weight: normal;
+    @include alegreya(normal);
     font-size: 13px;
     line-height: 18px;
     color: $secondaryColor;
   }
-
-
-}
-
-.button {
-  width: 160px;
-  height: 32px;
-  border: 1px solid $primaryColor;
-  border-radius: 20px;
-  background: transparent;
-
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  text-transform: uppercase;
-
-  color: $primaryColor;
 }

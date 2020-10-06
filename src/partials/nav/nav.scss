@@ -1,7 +1,6 @@
 .nav {
-  background-color: rgba($color:$darkGray, $alpha: 0.75);
+  background-color: rgba($color: $darkGray, $alpha: 0.75);
   border-radius: 6px;
-
 
   &-container {
     display: flex;
@@ -13,7 +12,7 @@
   &__logo {
     width: 266px;
   }
-// съезжаются элементы меню при уменьшении ширины
+  // съезжаются элементы меню при уменьшении ширины
   &__menu {
     display: flex;
     justify-content: space-between;
@@ -36,25 +35,8 @@
 
     color: $secondaryColor;
   }
-}
 
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__img {
-    position: relative;
-    top: -5px;
-  }
-
-  &__text {
-    font-family: Alegreya;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 14px;
-    text-transform: uppercase;
+  &__link_green {
     color: $primaryColor;
   }
 }

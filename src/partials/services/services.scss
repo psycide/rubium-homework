@@ -1,5 +1,4 @@
 .services {
-
   &__list {
     margin-top: 93px;
     margin-left: auto;
@@ -14,11 +13,11 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   &__img {
     width: 120px;
     height: 120px;
-    background:$darkGray;
+    background: $darkGray;
     /* Primary */
     border-radius: 50%;
     border: 1px solid $primaryColor;
@@ -29,9 +28,7 @@
   &__text {
     margin-top: 20px;
     max-width: 173px;
-    font-family: Alegreya;
-    font-style: normal;
-    font-weight: 500;
+    @include alegreya(500);
     font-size: 24px;
     line-height: 33px;
     text-align: center;

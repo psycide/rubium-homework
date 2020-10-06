@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background:$darkGray;
+  background: $darkGray;
 
   &__logo {
     margin-top: 40px;
@@ -41,9 +41,7 @@
   column-gap: 40px;
 
   &__link {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+    @include montserrat(normal);
     font-size: 12px;
     line-height: 15px;
     /* identical to box height */

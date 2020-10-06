@@ -13,9 +13,7 @@
     }
   
     &__text {
-      font-family: Alegreya;
-      font-style: normal;
-      font-weight: 500;
+      @include alegreya(500);
       font-size: 16px;
       line-height: 30px;
       /* identical to box height, or 187% */
@@ -24,9 +22,7 @@
     }
   
     &__text_dark {
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: normal;
+      @include montserrat(500);
       font-size: 14px;
       line-height: 18px;
       /* identical to box height, or 129% */

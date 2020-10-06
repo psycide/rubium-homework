@@ -61,11 +61,8 @@
   }
 
   &__title {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 44px;
+    @include montserrat(600);
+    @include subtitle();
     text-transform: uppercase;
 
     color: $primaryColor;
@@ -73,9 +70,7 @@
 
   &__text {
     margin-top: 40px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+    @include montserrat(normal);
     font-size: 24px;
     line-height: 29px;
 
@@ -91,12 +86,8 @@
     bottom: 20px;
     width: 65px;
     left: calc(50% - 32.5px);
-
-    // margin-right: auto;
-    // margin-left: auto;
     display: flex;
     justify-content: space-between;
-    
   }
 
   &__pagination-item {

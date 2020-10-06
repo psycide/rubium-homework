@@ -1,5 +1,5 @@
 .review {
-  background:$darkGray;
+  background: $darkGray;
   padding: 27px 20px 38px 20px;
 
   &__row {
@@ -8,9 +8,7 @@
   }
 
   &__author {
-    font-family: Alegreya;
-    font-style: normal;
-    font-weight: bold;
+    @include alegreya(bold);
     font-size: 14px;
     line-height: 19px;
     /* identical to box height */
@@ -19,9 +17,7 @@
   }
 
   &__date {
-    font-family: Alegreya;
-    font-style: normal;
-    font-weight: normal;
+    @include alegreya(normal);
     font-size: 12px;
     line-height: 16px;
 
@@ -36,9 +32,7 @@
     margin-top: 12px;
     max-width: 330px;
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+    @include montserrat(normal);
     font-size: 14px;
     line-height: 17px;
 

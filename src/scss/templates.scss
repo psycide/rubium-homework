@@ -1,5 +1,33 @@
-$primaryColor: #34C759;
+$primaryColor: #34c759;
 $secondaryColor: #ffffff;
-$black: #1A1A1A;
+$black: #1a1a1a;
 $darkGray: #252525;
 $liteGray: #737373;
+
+@mixin montserrat($fw) {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: $fw;
+}
+
+@mixin alegreya($fw) {
+  font-family: Alegreya;
+  font-style: normal;
+  font-weight: $fw;
+}
+
+@mixin subtitle {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+@mixin decorUnderline {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 0;
+  left: calc(50% - 30px);
+  bottom: -20px;
+  border: solid $primaryColor 1px;
+}

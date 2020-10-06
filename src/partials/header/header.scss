@@ -18,9 +18,7 @@
   &__title {
     margin: 0 0;
     max-height: 1100px;
-    font-family: Alegreya;
-    font-style: normal;
-    font-weight: 500;
+    @include alegreya(500);
     font-size: 72px;
     line-height: 72px;
     /* or 100% */
@@ -66,14 +64,4 @@
     margin: 0 auto;
     margin-top: 74px;
   }
-}
-
-.wrapper {
-  max-width: 1268px;
-  padding: 0 10px;
-  margin: 0 auto;
-}
-
-body {
-  background: $black;
 }
