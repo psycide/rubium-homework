@@ -1,0 +1,23 @@
+.sidebar {
+  position: fixed;
+  top: 201px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    background: rgba($color: $liteGray, $alpha: 0.5);
+    transition: background-color 0.8s;
+  }
+
+  &__item:hover {
+    background: rgba($color:$darkGray, $alpha: 0.65);
+  }
+}

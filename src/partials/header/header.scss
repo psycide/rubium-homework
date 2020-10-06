@@ -25,7 +25,7 @@
     line-height: 72px;
     /* or 100% */
     text-align: center;
-    color: #ffffff;
+    color: $secondaryColor;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
   }
 
@@ -75,5 +75,5 @@
 }
 
 body {
-  background: #1a1a1a;
+  background: $black;
 }

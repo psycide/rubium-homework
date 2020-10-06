@@ -1,5 +1,10 @@
 mixin event(bg, time, title, text)
-    div(class!= 'event ' + attributes.class) 
+    - let mixinClass = ''
+    if attributes.class 
+        - mixinClass = ' ' + attributes.class
+
+    
+    div(class!= 'event' + mixinClass) 
         if bg  
             img.event__bg-img(src=bg, alt='event-bg')
         p.event__time= time

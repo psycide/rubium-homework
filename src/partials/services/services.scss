@@ -18,10 +18,10 @@
   &__img {
     width: 120px;
     height: 120px;
-    background: #252525;
+    background:$darkGray;
     /* Primary */
     border-radius: 50%;
-    border: 1px solid #34c759;
+    border: 1px solid $primaryColor;
     box-sizing: border-box;
     object-fit: none;
   }
@@ -36,6 +36,6 @@
     line-height: 33px;
     text-align: center;
 
-    color: #ffffff;
+    color: $secondaryColor;
   }
 }

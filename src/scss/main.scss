@@ -1,5 +1,6 @@
 @import './fonts.scss';
 @import './reset.scss';
+@import './templates.scss';
 @import "../partials/header/header.scss";
 @import "../partials/communications/communications.scss";
 @import "../partials/nav/nav.scss";
@@ -13,3 +14,6 @@
 @import '../partials/review/review.scss';
 @import '../partials/contacts/contacts.scss';
 @import '../partials/footer/footer.scss';
+@import '../partials/event/event.scss';
+@import '../partials/events/events.scss';
+@import '../partials/sidebar/sidebar.scss';

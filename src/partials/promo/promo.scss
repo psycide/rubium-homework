@@ -1,6 +1,6 @@
 .promo {
   max-width: 1200px;
-  background: linear-gradient(180deg, #1a1a1a 0%, #2c2c2c 100%);
+  background: linear-gradient(180deg, $black 0%, #2c2c2c 100%);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   display: flex;
@@ -22,7 +22,7 @@
 
     /* Primary */
 
-    color: #34c759;
+    color: $primaryColor;
   }
 
   &__text {
@@ -70,7 +70,7 @@
 
     /* Primary */
 
-    border-bottom: 1px solid #34c759;
+    border-bottom: 1px solid $primaryColor;
   }
 
   &__title {
@@ -80,7 +80,7 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    color: #ffffff;
+    color: $secondaryColor;
   }
 
   &__text {
@@ -90,7 +90,7 @@
     font-weight: normal;
     font-size: 13px;
     line-height: 18px;
-    color: #ffffff;
+    color: $secondaryColor;
   }
 
 
@@ -99,7 +99,7 @@
 .button {
   width: 160px;
   height: 32px;
-  border: 1px solid #34c759;
+  border: 1px solid $primaryColor;
   border-radius: 20px;
   background: transparent;
 
@@ -111,5 +111,5 @@
   text-align: center;
   text-transform: uppercase;
 
-  color: #34c759;
+  color: $primaryColor;
 }

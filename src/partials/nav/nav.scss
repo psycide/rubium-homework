@@ -1,5 +1,5 @@
 .nav {
-  background-color: rgba($color: #252525, $alpha: 0.75);
+  background-color: rgba($color:$darkGray, $alpha: 0.75);
   border-radius: 6px;
 
 
@@ -34,7 +34,7 @@
     line-height: 14px;
     /* identical to box height, or 100% */
 
-    color: #ffffff;
+    color: $secondaryColor;
   }
 }
 
@@ -55,6 +55,6 @@
     font-size: 24px;
     line-height: 14px;
     text-transform: uppercase;
-    color: #34c759;
+    color: $primaryColor;
   }
 }

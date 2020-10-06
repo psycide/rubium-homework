@@ -46,7 +46,7 @@
     height: 60px;
     border-radius: 50%;
     object-fit: none;
-    border: 2px solid #34c759;
+    border: 2px solid $primaryColor;
     box-sizing: border-box;
     background: transparent;
     flex-shrink: 0;
@@ -68,7 +68,7 @@
     line-height: 44px;
     text-transform: uppercase;
 
-    color: #34c759;
+    color: $primaryColor;
   }
 
   &__text {
@@ -79,7 +79,7 @@
     font-size: 24px;
     line-height: 29px;
 
-    color: #ffffff;
+    color: $secondaryColor;
   }
 
   &__button {
@@ -102,12 +102,12 @@
   &__pagination-item {
     width: 15px;
     height: 15px;
-    border: 1px solid #34c759;
+    border: 1px solid $primaryColor;
     box-sizing: border-box;
     border-radius: 50%;
   }
 
   &__pagination-item_current {
-    background-color: #34c759;
+    background-color: $primaryColor;
   }
 }
