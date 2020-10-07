@@ -1,12 +1,20 @@
 .nav {
   background-color: rgba($color: $darkGray, $alpha: 0.75);
-  border-radius: 6px;
+  border-radius: 0 0 6px 6px;
 
   &-container {
     display: flex;
     justify-content: space-between;
     height: 91px;
     padding: 0 73px;
+  }
+
+  &__burger {
+    display: none;
+    
+    @media (max-width: $tabletWidth) {
+      display: block;
+    }
   }
 
   &__logo {
@@ -18,6 +26,10 @@
     justify-content: space-between;
     align-items: center;
     width: 448px;
+
+    @media (max-width: $tabletWidth) {
+      display: none;
+    }
   }
 
   &__item {
@@ -38,5 +50,17 @@
 
   &__link_green {
     color: $primaryColor;
+  }
+
+  &__icons {
+    display: none;
+
+    @media (max-width: $tabletWidth) {
+      display: flex;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
   }
 }

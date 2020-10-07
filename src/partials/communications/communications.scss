@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     max-width: 861px;
+    
+    @media (max-width: $tabletWidth) {
+      display: none;
+    }
   
     &__item {
       display: flex;

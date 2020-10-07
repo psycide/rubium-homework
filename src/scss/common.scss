@@ -13,7 +13,7 @@ body {
   }
 
   &__text {
- @include alegreya(bold);;
+    @include alegreya(bold);
     font-size: 24px;
     line-height: 14px;
     text-transform: uppercase;
@@ -38,7 +38,7 @@ body {
 
   color: $primaryColor;
   transition-duration: 0.5s;
-  
+
   &:hover {
     background-color: $darkGray;
     text-shadow: 0px 0px 4px;
@@ -50,4 +50,24 @@ body {
   max-width: 1268px;
   padding: 0 10px;
   margin: 0 auto;
+}
+
+@media (max-width: $tabletWidth) {
+  .wrapper {
+    max-width: 788px;
+    padding: 0;
+  }
+}
+
+.sidebar,
+// .nav,
+.services,
+.slider,
+.events,
+.best-chefs,
+.best-products,
+.reviews,
+.contacts,
+.footer {
+  display: none;
 }

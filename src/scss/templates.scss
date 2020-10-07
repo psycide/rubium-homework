@@ -3,6 +3,7 @@ $secondaryColor: #ffffff;
 $black: #1a1a1a;
 $darkGray: #252525;
 $liteGray: #737373;
+$tabletWidth: 790px;
 
 @mixin montserrat($fw) {
   font-family: Montserrat;
@@ -19,6 +20,11 @@ $liteGray: #737373;
 @mixin subtitle {
   font-size: 36px;
   line-height: 44px;
+
+  @media (max-width: 790px) {
+    font-size: 32px;
+    line-height: 32px;
+  }
 }
 
 @mixin decorUnderline {
