@@ -2,25 +2,36 @@
   background-color: rgba($color: $darkGray, $alpha: 0.75);
   border-radius: 0 0 6px 6px;
 
+  @media (max-width: $tabletWidth) {
+    border-radius: 0;
+  }
+
   &-container {
     display: flex;
     justify-content: space-between;
     height: 91px;
     padding: 0 73px;
+
+    @media (max-width: $tabletWidth) {
+      padding: 0 4vw;
+      height: 12.8vw;
+    }
   }
 
-  &__burger {
+  &__button {
     display: none;
-    
+    background-color: transparent;
+
     @media (max-width: $tabletWidth) {
       display: block;
     }
   }
 
-  &__logo {
-    width: 266px;
+  &__burger-icon {
+    width: 8.424vw;
+    height: 4.53vw;
   }
-  // съезжаются элементы меню при уменьшении ширины
+
   &__menu {
     display: flex;
     justify-content: space-between;
@@ -43,8 +54,6 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 14px;
-    /* identical to box height, or 100% */
-
     color: $secondaryColor;
   }
 
@@ -57,10 +66,34 @@
 
     @media (max-width: $tabletWidth) {
       display: flex;
+      column-gap: 3vw;
     }
   }
 
-  &__button {
-    background-color: transparent;
+  &__icon {
+    width: 6.33vw;
+    height: 4.85vw;
+  }
+
+  &__button-wrapper {
+    position: relative;
+  }
+
+  &__button-count {
+    position: absolute;
+    right: -0.5vw;
+    top: -0.5vw;
+    width: 2.53vw;
+    height: 2.53vw;
+    border-radius: 50%;
+    background: #7d2c1b;
+    @include montserrat(500);
+    font-size: 1.86vw;
+    line-height: 2.4vw;
+    color: $secondaryColor;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

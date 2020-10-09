@@ -6,10 +6,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 266px;
+
+  @media (max-width: $tabletWidth) {
+    column-gap: 2.64vw;
+    width: fit-content;
+  }
 
   &__img {
     position: relative;
     top: -5px;
+
+    @media (max-width: $tabletWidth) {
+      top: -0.98vw;
+      width: 5.42vw;
+      height: 5.33vw;
+    }
   }
 
   &__text {
@@ -18,6 +30,13 @@ body {
     line-height: 14px;
     text-transform: uppercase;
     color: $primaryColor;
+
+    @media (max-width: $tabletWidth) {
+      font-weight: 500;
+      font-size: 4.8vw;
+      line-height: 3.73vw;
+      text-transform: none;
+    }
   }
 }
 
@@ -57,9 +76,8 @@ body {
     max-width: 788px;
     padding: 0;
   }
-}
 
-.sidebar,
+  .sidebar,
 // .nav,
 .services,
 .slider,
@@ -71,3 +89,6 @@ body {
 .footer {
   display: none;
 }
+}
+
+
