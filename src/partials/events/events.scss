@@ -14,11 +14,23 @@
   }
 
   &__content {
-    margin-top: 82px;
+    margin: 82px auto 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 31px;
+    
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7px;
+    width: 100%;
   }
 
   &__item {
-    max-width: $tabletWidth;
+    width: 100%;
   }
 
   &__item_img {
@@ -27,5 +39,17 @@
 
   &__item:not(:first-child) {
     margin-top: 40px;
+  }
+
+  &__all-events {
+    display: flex;
+    // margin-left: 100px;
+    margin-top: 40px;
+    width: fit-content;
+    align-self: flex-end;
+    @include montserrat(500);
+    font-size: 18px;
+    line-height: 22px;
+    color: $primaryColor;
   }
 }

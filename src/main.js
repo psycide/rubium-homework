@@ -1,5 +1,6 @@
 import { Bar } from "./js/bar.es6";
 require("normalize.css/normalize.css");
+// import './partials/calendar/calendar.js'
 import "./scss/main.scss";
 const { Foo } = require("./js/foo.cjs");
 

@@ -4,7 +4,7 @@ section.events.wrapper
     h2.events__title Календарь мероприятий
     .events__content
         include ../calendar/calendar.pug
-        .events-container
+        .events__container
             +event(
                 '',
                 '10:00',
@@ -17,4 +17,5 @@ section.events.wrapper
                 'Джазовый концерт',
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut'
                 ).events__item.events__item_img
+            a.events__all-events(href='#') Все ближайшие события &gt;&gt;
         

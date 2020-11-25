@@ -1,0 +1,103 @@
+.calendar {
+  position: relative;
+  width: 379px;
+  height: fit-content;
+  background-color: $darkGray;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 72.5px;
+    height: 0;
+    // bottom: -20px;
+    border-bottom: 1px solid #737373;
+  }
+
+  &__header {
+    // position: relative;
+    margin: 0 25px;
+    height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Alegreya;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: $secondaryColor;
+  }
+
+
+  &__button {
+    background-color: transparent;
+  }
+
+  &__week {
+    margin: 0 auto;
+    display: flex;
+    width: 294px;
+    justify-content: space-between;
+  }
+
+  &__week-day {
+    @include montserrat(600);
+    width: 17px;
+    height: 17px;
+    font-size: 12px;
+    line-height: 15px;
+    color: $liteGray;
+  }
+
+  &__days {
+    margin: 0 auto;
+    width: 330px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 35px;
+    row-gap: 30px;
+    justify-content: space-between;
+  }
+
+  &__day {
+    position: relative;
+    @include montserrat(500);
+    background: transparent;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    width: 17px;
+    height: 17px;
+  }
+
+  &__month {
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 29px;
+    column-gap: 35px;
+  }
+
+  &__day-selector {
+    // display: none;
+    position: absolute;
+    content: '';
+    top: -17.5px;
+    left: -17.5px;
+    width: 52px;
+    height: 52px;
+    border: 1px solid;
+    border-radius: 50%;
+    border-color: $primaryColor;
+  }
+
+  &__day_with-event {
+    color: $primaryColor;
+  }
+}
