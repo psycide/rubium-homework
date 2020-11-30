@@ -2,6 +2,14 @@ body {
   background: $black;
 }
 
+html {
+  font-size: 5px;
+
+  @media (max-width: 450px) {
+    font-size: 3.75px;
+  }
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -9,8 +17,12 @@ body {
   width: 266px;
 
   @media (max-width: $tabletWidth) {
-    column-gap: 2.64vw;
+    column-gap: 2.64rem;
     width: fit-content;
+  }
+
+  @media (max-width: $mobileWidth) {
+    column-gap: 2.64vw;
   }
 
   &__img {
@@ -18,6 +30,12 @@ body {
     top: -5px;
 
     @media (max-width: $tabletWidth) {
+      top: -0.98rem;
+      width: 5.42rem;
+      height: 5.33rem;
+    }
+
+    @media (max-width: $mobileWidth) {
       top: -0.98vw;
       width: 5.42vw;
       height: 5.33vw;
@@ -33,9 +51,13 @@ body {
 
     @media (max-width: $tabletWidth) {
       font-weight: 500;
+      font-size: 4.8rem;
+      line-height: 3.73rem;
+      text-transform: none;
+    }
+    @media (max-width: $mobileWidth) {
       font-size: 4.8vw;
       line-height: 3.73vw;
-      text-transform: none;
     }
   }
 }
@@ -77,18 +99,19 @@ body {
     padding: 0;
   }
 
+  
+  // .nav,
+  // .services,
   .sidebar,
-// .nav,
-.services,
-.slider,
-.events,
-.best-chefs,
-.best-products,
-.reviews,
-.contacts,
-.footer {
+  .slider,
+  .events,
+  .best-chefs,
+  .best-products,
+  .reviews,
+  .contacts,
+  .footer {
   display: none;
-}
+  }
 }
 
 

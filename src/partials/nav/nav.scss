@@ -13,6 +13,11 @@
     padding: 0 73px;
 
     @media (max-width: $tabletWidth) {
+      padding: 0 4rem;
+      height: 12.8rem;
+    }
+
+    @media (max-width: $mobileWidth) {
       padding: 0 4vw;
       height: 12.8vw;
     }
@@ -28,8 +33,13 @@
   }
 
   &__burger-icon {
-    width: 8.424vw;
-    height: 4.53vw;
+    width: 8.424rem;
+    height: 4.53rem;
+    
+    @media (max-width: $mobileWidth) {
+      width: 8.424vw;
+      height: 4.53vw;
+    }
   }
 
   &__menu {
@@ -66,13 +76,22 @@
 
     @media (max-width: $tabletWidth) {
       display: flex;
+      column-gap: 3rem;
+    }
+
+    @media (max-width: $mobileWidth) {
       column-gap: 3vw;
     }
   }
 
   &__icon {
-    width: 6.33vw;
-    height: 4.85vw;
+    width: 6.33rem;
+    height: 4.85rem;
+
+    @media (max-width: $mobileWidth) {
+      width: 6.33vw;
+      height: 4.85vw;
+    }
   }
 
   &__button-wrapper {
@@ -81,19 +100,28 @@
 
   &__button-count {
     position: absolute;
-    right: -0.5vw;
-    top: -0.5vw;
-    width: 2.53vw;
-    height: 2.53vw;
+    right: -0.5rem;
+    top: -0.5rem;
+    width: 2.53rem;
+    height: 2.53rem;
     border-radius: 50%;
     background: #7d2c1b;
     @include montserrat(500);
-    font-size: 1.86vw;
-    line-height: 2.4vw;
+    font-size: 1.86rem;
+    line-height: 2.4rem;
     color: $secondaryColor;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: $mobileWidth) {
+      right: -0.5vw;
+      top: -0.5vw;
+      width: 2.53vw;
+      height: 2.53vw;
+      font-size: 1.86vw;
+      line-height: 2.4vw;
+    }
   }
 }

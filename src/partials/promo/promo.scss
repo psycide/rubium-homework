@@ -22,6 +22,12 @@
     color: $primaryColor;
 
     @media (max-width: $tabletWidth) {
+      margin-top: 5px;
+      font-size: 6.4rem;
+      line-height: 7.73rem;
+    }
+
+    @media (max-width: $mobileWidth) {
       margin-top: 2px;
       font-size: 6.4vw;
       line-height: 7.73vw;
@@ -38,6 +44,11 @@
 
     @media (max-width: $tabletWidth) {
       margin: 0;
+      font-size: 3.73rem;
+      line-height: 5.06rem;
+    }
+
+    @media (max-width: $mobileWidth) {
       font-size: 3.73vw;
       line-height: 5.06vw;
     }
@@ -48,17 +59,27 @@
       width: 100%;
       height: fit-content;
     }
+
+    @media (max-width: $mobileWidth) {
+
+    }
   }
 
   &__content {
     margin-top: 40px;
+
     @media (max-width: $tabletWidth) {
+      margin-top: 5.33rem;
+    }
+
+    @media (max-width: $mobileWidth) {
       margin-top: 5.33vw;
     }
   }
 
   &__button {
     margin: 40px 0;
+
     @media (max-width: $tabletWidth) {
       display: none;
     }
@@ -70,6 +91,10 @@
 
   @media (max-width: $tabletWidth) {
     flex-direction: column-reverse;
+    padding: 0 5.33rem 5.33rem 5.33rem;
+  }
+
+  @media (max-width: $mobileWidth) {
     padding: 0 5.33vw 5.33vw 5.33vw;
   }
 
@@ -82,6 +107,10 @@
 
     @media (max-width: $tabletWidth) {
       width: 100%;
+      margin: 5.33rem 0 0 0;
+    }
+
+    @media (max-width: $mobileWidth) {
       margin: 5.33vw 0 0 0;
     }
   }
@@ -111,9 +140,10 @@
     color: $secondaryColor;
 
     @media (max-width: $tabletWidth) {
-      font-size: 3.2vw;
-      line-height: 4vw;
+      font-size: 3.2rem;
+      line-height: 4rem;
     }
+
   }
 
   &__text {
@@ -124,8 +154,8 @@
     color: $secondaryColor;
 
     @media (max-width: $tabletWidth) {
-      font-size: 2.93vw;
-      line-height: 4vw;
+      font-size: 2.93rem;
+      line-height: 4rem;
     }
   }
 }
