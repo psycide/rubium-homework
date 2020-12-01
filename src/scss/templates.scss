@@ -24,9 +24,9 @@ $mobileWidthDiff: 0.7;
   font-size: 36px;
   line-height: 44px;
 
-  @media (max-width: 790px) {
-    font-size: 32px;
-    line-height: 32px;
+  @media (max-width: $tabletWidth) {
+    font-size: 4.8rem;
+    line-height: 5.86rem;
   }
 }
 

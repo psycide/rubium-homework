@@ -3,6 +3,10 @@
 .best-chefs {
   margin-top: 82px;
 
+  @media (max-width: $tabletWidth) {
+    margin-top: 10.66rem;
+  }
+
   &__title {
     position: relative;
     @include montserrat(500);
@@ -11,15 +15,10 @@
     color: #d9d9d9;
   }
 
+  
+
   &__title::after {
-    position: absolute;
-    display: block;
-    content: "";
-    width: 60px;
-    height: 0;
-    left: calc(50% - 30px);
-    bottom: -20px;
-    border: $primaryColor solid 1px;
+    @include decorUnderline();
   }
 
   &__list {
@@ -29,5 +28,10 @@
     display: flex;
     max-width: 951px;
     justify-content: space-between;
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 8.6rem;
+      padding: 0 5.33rem;
+    }
   }
 }

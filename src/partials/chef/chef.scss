@@ -2,8 +2,17 @@
   display: flex;
   align-items: center;
 
+  @media (max-width: $tabletWidth) {
+    flex-direction: column;
+  }
+
   &-container {
     margin-left: 24px;
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 4.8rem;
+      margin-left: 0;
+    }
   }
 
   &__name {
@@ -11,8 +20,13 @@
     font-size: 18px;
     line-height: 24px;
     letter-spacing: -0.225px;
-
     color: $secondaryColor;
+
+    @media (max-width: $tabletWidth) {
+      text-align: center;
+      font-size: 3.46rem;
+      line-height: 4.8rem;
+    }
   }
 
   &__description {
@@ -21,10 +35,13 @@
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;
-    /* identical to box height, or 133% */
-
     letter-spacing: -0.15px;
-
     color: rgba(255, 255, 255, 0.5);
+
+    @media (max-width: $tabletWidth) {
+      text-align: center;
+      font-size: 2.93rem;
+      line-height: 4.26rem;
+    }
   }
 }

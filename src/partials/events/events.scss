@@ -10,12 +10,7 @@
     @include montserrat(500);
     @include subtitle();
     text-align: center;
-    color: #d9d9d9;
-
-    @media (max-width: $tabletWidth) {
-      font-size: 4.8rem;
-      line-height: 5.86rem;
-    } 
+    color: #d9d9d9; 
   }
 
   &__title::after {
