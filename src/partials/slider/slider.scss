@@ -182,6 +182,7 @@
     @media (max-width: $tabletWidth) {
       width: 14.4rem;
       bottom: -5.86rem;
+      left: calc(50% - 7.2rem);
     }
   
     @media (max-width: $mobileWidth) {

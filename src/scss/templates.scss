@@ -31,6 +31,7 @@ $mobileWidthDiff: 0.7;
 }
 
 @mixin decorUnderline {
+  box-sizing: border-box;
   display: block;
   position: absolute;
   content: "";
@@ -39,4 +40,8 @@ $mobileWidthDiff: 0.7;
   left: calc(50% - 30px);
   bottom: -20px;
   border: solid $primaryColor 1px;
+
+  @media (max-width: $tabletWidth) {
+    bottom: -2.66rem;
+  }
 }

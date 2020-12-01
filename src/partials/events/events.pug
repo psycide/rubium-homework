@@ -4,6 +4,9 @@ section.events.wrapper
     h2.events__title Календарь мероприятий
     .events__content
         include ../calendar/calendar.pug
+        .events__calendar-mobile
+            img.events__calendar-icon(src='./src/svg/icon-calendar.svg')
+            span.events__calendar-text 14.09.2018
         .events__container
             +event(
                 '',
@@ -17,5 +20,5 @@ section.events.wrapper
                 'Джазовый концерт',
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut'
                 ).events__item.events__item_img
-            a.events__all-events(href='#') Все ближайшие события &gt;&gt;
+            a.events__link(href='#') Все ближайшие события &gt;&gt;
         

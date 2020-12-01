@@ -7,6 +7,10 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
 
+  @media (max-width: $tabletWidth) {
+    padding: 4.26rem;
+  }
+
   &__bg-img {
     position: absolute; 
     top: 0;
@@ -22,9 +26,12 @@
     @include montserrat(500);
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height */
-
     color: #b3b3b3;
+
+    @media (max-width: $tabletWidth) {
+      font-size: 2.66rem;
+      line-height: 3.2rem;
+    }
   }
 
   &__title {
@@ -32,8 +39,12 @@
     @include alegreya(bold);
     font-size: 18px;
     line-height: 24px;
-
     color: $secondaryColor;
+
+    @media (max-width: $tabletWidth) {
+      font-size: 3.73rem;
+      line-height: 5.06rem;
+    }
   }
 
   &__text {
@@ -41,9 +52,13 @@
     @include montserrat(500);
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
     color: $secondaryColor;
+
+    @media (max-width: $tabletWidth) {
+      font-weight: normal;
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
   }
 
   &__stat {

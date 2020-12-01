@@ -1,12 +1,21 @@
 .events {
   margin-top: 80px;
 
+  @media (max-width: $tabletWidth) {
+    margin-top: 10.66rem;
+  }
+
   &__title {
     position: relative;
     @include montserrat(500);
     @include subtitle();
     text-align: center;
     color: #d9d9d9;
+
+    @media (max-width: $tabletWidth) {
+      font-size: 4.8rem;
+      line-height: 5.86rem;
+    } 
   }
 
   &__title::after {
@@ -19,7 +28,30 @@
     display: flex;
     justify-content: space-between;
     column-gap: 31px;
-    
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 9.6rem;
+      flex-direction: column;
+      padding: 0 5.33rem;
+    }    
+  }
+
+  &__calendar-mobile {
+    display: none;
+    column-gap: 2.4rem;
+    justify-content: flex-end;
+
+    @media (max-width: $tabletWidth) {
+      display: flex;
+    }
+  }
+
+  &__calendar-text {
+    @include montserrat(normal);
+    font-size: 3.73rem;
+    line-height: 4.53rem;
+    color: $secondaryColor;
+
   }
 
   &__container {
@@ -27,6 +59,11 @@
     flex-direction: column;
     padding-top: 7px;
     width: 100%;
+
+    @media (max-width: $tabletWidth) {
+      padding: 0;
+      margin-top: 6.4rem;
+    }
   }
 
   &__item {
@@ -34,14 +71,18 @@
   }
 
   &__item_img {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   }
 
   &__item:not(:first-child) {
     margin-top: 40px;
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 5.33rem;
+    }
   }
 
-  &__all-events {
+  &__link {
     display: flex;
     // margin-left: 100px;
     margin-top: 40px;
@@ -51,5 +92,11 @@
     font-size: 18px;
     line-height: 22px;
     color: $primaryColor;
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 5.33rem;
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
   }
 }
