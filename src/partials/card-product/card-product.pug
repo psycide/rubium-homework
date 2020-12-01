@@ -1,5 +1,9 @@
 mixin card-product(img, name, description, price)
-    .card-product
+    - let mixinClass = ''
+    if attributes.class 
+        - mixinClass = ' ' + attributes.class
+
+    div(class='card-product' + mixinClass)
             img.card-product__img(src=img)
             h3.card-product__name= name
             p.card-product__description= description

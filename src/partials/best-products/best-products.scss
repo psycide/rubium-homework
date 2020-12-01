@@ -1,6 +1,10 @@
 .best-products {
   margin-top: 80px;
 
+  @media (max-width: $tabletWidth) {
+    margin-top: 10.66rem;
+    }
+
   &__title {
     position: relative;
     @include montserrat(500);
@@ -21,5 +25,18 @@
     column-gap: 30px;
     row-gap: 40px;
     justify-content: center;
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 9.86rem;
+      grid-template-columns: repeat(auto-fill, 42.13rem);
+      column-gap: 5.33rem;
+      row-gap: 5.33rem;
+    }
+  }
+
+  &__item {
+    @media (max-width: $tabletWidth) {
+      height: 56.6rem;
+    }
   }
 }
