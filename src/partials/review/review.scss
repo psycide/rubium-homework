@@ -1,8 +1,14 @@
 .review {
   background: $darkGray;
-  padding: 27px 20px 38px 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+
+
 
   &__row {
+    margin-top: 27px;
     display: flex;
     justify-content: space-between;
   }
@@ -11,31 +17,63 @@
     @include alegreya(bold);
     font-size: 14px;
     line-height: 19px;
-    /* identical to box height */
-
     color: rgba(255, 255, 255, 0.75);
+
+    @media (max-width: $tabletWidth) {
+      font-size: 3.73rem;
+      line-height: 5.06rem;
+    }
   }
 
   &__date {
     @include alegreya(normal);
     font-size: 12px;
     line-height: 16px;
-
     color: $liteGray;
+
+    @media (max-width: $tabletWidth) {
+      font-size: 3.2rem;
+      line-height: 4.26rem;
+    }
   }
 
   &__rating {
     margin-top: 12px;
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__text {
+  &__text-container {
+    position: relative;
     margin-top: 12px;
-    max-width: 330px;
+    width: 100%;
+    height: 49.58%;
+    overflow: hidden;
 
     @include montserrat(normal);
     font-size: 14px;
     line-height: 17px;
-
     color: rgba(255, 255, 255, 0.75);
+
+    @media (max-width: $tabletWidth) {
+      margin-bottom: 6.93rem;
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
+  }
+
+  &__text {
+    width: 97%;
+  }
+
+  &__scroll {
+    position: absolute;
+    top: 0;
+    right: 3.5px;
+    height: 77%;
+    width: 3.5px;
+    background: #303030;
+    border-radius: 100px;
   }
 }

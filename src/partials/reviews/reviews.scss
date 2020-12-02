@@ -1,6 +1,10 @@
 .reviews {
   margin-top: 80px;
 
+  @media (max-width: $tabletWidth) {
+    margin-top: 10.66rem;
+  }
+
   &__title {
     position: relative;
     @include montserrat(500);
@@ -17,14 +21,26 @@
     display: grid;
     margin: 62px auto 0 auto;
     max-width: 1200px;
-    display: grid;
     grid-template-columns: repeat(auto-fill, 380px);
     column-gap: 30px;
     row-gap: 40px;
     justify-content: center;
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 8.53rem;
+      grid-template-columns: repeat(auto-fill, 100vw);
+    }
   }
 
   &__item {
     height: 240px;
+
+    @media (max-width: $tabletWidth) {
+      height: 199px;
+    }
+
+    @media (max-width: $mobileWidth) {
+      height: 53.06vw;
+    }
   }
 }
