@@ -100,8 +100,7 @@
       color: $primaryColor;
 
       @media (max-width: $tabletWidth) {
-        color: $primaryColor;
-        background-color: $darkGray;
+        color: $darkGray;
         }
     }
 
