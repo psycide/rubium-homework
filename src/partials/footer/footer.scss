@@ -38,6 +38,11 @@
 
   &__menu {
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 40px;
     margin-top: 18px;
   }
 
@@ -66,22 +71,7 @@
   }
 }
 
-.links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  row-gap: 10px;
-  column-gap: 40px;
 
-  &__link {
-    @include montserrat(normal);
-    font-size: 12px;
-    line-height: 15px;
-    /* identical to box height */
-
-    color: rgba(255, 255, 255, 0.75);
-  }
-}
 
 .socials {
   display: flex;

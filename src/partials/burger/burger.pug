@@ -1,0 +1,41 @@
+section.burger
+    .burger__header
+        button.burger__close(id='burgerButtonClose')
+            img.burger__close-icon(src='./src/svg/icon-burger-close.svg')
+        .burger__icons
+            a.icon.burger__icon
+                img.icon__img(src='./src/svg/sidebar-icon-1.svg')
+            a.icon.burger__icon(href='')
+                img.icon__img(src='./src/svg/sidebar-icon-2.svg')
+                .icon__count 6
+            a.icon.burger__icon(href='')
+                img.icon__img(src='./src/svg/sidebar-icon-3.svg')
+    ul.burger__menu
+        li.burger__menu-item
+            a.burger__menu-link.burger__menu-link_green(href='') Пицца
+        li.burger__menu-item.burger__menu-item
+            a.burger__menu-link(href='') Роллы
+        li.burger__menu-item.burger__menu-item
+            a.burger__menu-link(href='') Бизнес-ланчи
+        li.burger__menu-item.burger__menu-item
+            a.burger__menu-link(href='') Закуски
+        li.burger__menu-item.burger__menu-item
+            a.burger__menu-link(href='') Десерты
+        li.burger__menu-item.burger__menu-item
+            a.burger__menu-link(href='') Напитки
+
+    ul.links.burger__links
+        li.links__item
+            a.links__link.links__link_burger(href='') О нас
+        li.links__item
+            a.links__link.links__link_burger(href='') Меню
+        li.links__item
+            a.links__link.links__link_burger(href='') Доставка
+        li.links__item
+            a.links__link.links__link_burger(href='') Оплата
+        li.links__item
+            a.links__link.links__link_burger(href='') Франшиза
+        li.links__item
+            a.links__link.links__link_burger(href='') Вакансии
+
+script(src="./src/partials/burger/burger.js")

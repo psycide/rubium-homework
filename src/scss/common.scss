@@ -10,6 +10,30 @@ html {
   }
 }
 
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+
+    &__count {
+    position: absolute;
+    right: 5.5px;
+    top: 9px;
+    padding: 0.3px 0 0 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #7d2c1b;
+    @include montserrat(500);
+    font-size: 9px;
+    line-height: 11px;
+    color: $secondaryColor;
+  }
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -91,6 +115,23 @@ html {
       text-shadow: none;
       box-shadow: none;
     }
+  }
+}
+
+.links {
+
+  &__link {
+    @include montserrat(normal);
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  &__link_burger {
+    font-size: 3.73rem;
+    line-height: 4.53rem;
   }
 }
 
