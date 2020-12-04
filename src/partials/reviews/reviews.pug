@@ -1,23 +1,31 @@
 include ../review/review.pug
 
 - const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet, consectetur adipiscing.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet, consectetur adipiscing'
-
+-
+    const reviewsList = [
+        {
+            author: '@DennisFerguson',
+            date: '24 Июн 2019 16:20',
+            text: lorem
+        },
+        {
+            author: '@lilili678',
+            date: '17 Авг 2019 16:20',
+            text: lorem
+        },
+        {
+            author: '@angryteacher',
+            date: '12 Апр 2018 20:20',
+            text: lorem
+        },
+    ]
 section.reviews.wrapper
     h2.reviews__title Отзывы
     .reviews__content
-        +review(
-            '@DennisFerguson',
-            '24 Июн 2019 16:20',
-            lorem
-            ).reviews__item
-        +review(
-            '@lilili678',
-            '17 Авг 2019 16:20',
-            lorem
-            ).reviews__item
-        +review(
-            '@angryteacher',
-            '12 Апр 2018 20:20',
-            lorem
-            ).reviews__item
+        each review in reviewsList
+            +review(
+                review.author,
+                review.date,
+                review.text
+                ).reviews__item            
         

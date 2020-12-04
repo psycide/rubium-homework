@@ -1,38 +1,53 @@
 include ../card-product/card-product.pug
 
 - const text = 'Две мясных котлеты гриль, Специальный соус, сыр, Огурцы, салат и лук, Огурцы, салат и лук. Всё на булачке с кунжутом,'
+-
+    const productsList = [
+        {
+            img: './src/img/image-1.png',
+            name: 'Шоколадный десерт с овсянкой',
+            description: text,
+            price: '165₽'
+        },
+        {
+            img: './src/img/image-2.png',
+            name: 'Блинчики с малиной',
+            description: text,
+            price: '125₽'
+        },
+        {
+            img: './src/img/image-3.png',
+            name: 'Ягодный пломбир',
+            description: text,
+            price: '95₽'
+        },
+                {
+            img: './src/img/image-4.png',
+            name: 'Шоколадный десерт с овсянкой',
+            description: text,
+            price: '165₽'
+        },
+        {
+            img: './src/img/image-5.png',
+            name: 'Блинчики с малиной',
+            description: text,
+            price: '125₽'
+        },
+        {
+            img: './src/img/image-6.png',
+            name: 'Ягодный пломбир',
+            description: text,
+            price: '95₽'
+        }
+    ];
 
 section.best-products.wrapper
     h2.best-products__title Популярные десерты
     .best-products__content
-        +card-product(
-            './src/img/image-1.png',
-            'Шоколадный десерт с овсянкой',
-            text, '165₽'
-        ).best-products__item
-        +card-product(
-            './src/img/image-2.png',
-            'Блинчики в малиной',
-            text, '165₽'
-        ).best-products__item
-        +card-product(
-            './src/img/image-3.png',
-            'Ягодный пломбир ',
-            text, '165₽'
-        ).best-products__item
-        +card-product(
-            './src/img/image-4.png',
-            'Шоколадный десерт с овсянкой',
-            text, '165₽'
-        ).best-products__item
-        +card-product(
-            './src/img/image-5.png',
-            'Блинчики в малиной',
-            text, '165₽'
+        each product in productsList
+            +card-product(
+                product.img,
+                product.name,
+                product.description,
+                product.price
             ).best-products__item
-        +card-product(
-            './src/img/image-6.png',
-            'Ягодный пломбир ',
-            text, '165₽'
-        ).best-products__item
-        
