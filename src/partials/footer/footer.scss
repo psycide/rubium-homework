@@ -16,6 +16,7 @@
 
     @media (max-width: $tabletWidth) {
       margin-top: 6.4rem;
+      align-items: flex-end;
     }
   }
 
@@ -30,9 +31,9 @@
     @media (max-width: $tabletWidth) {
       @include montserrat(600);
       text-transform: uppercase;
-      margin-top: 6.4rem;
+      align-self: flex-end;
       font-size: 6.4rem;
-      height: 8rem;
+      line-height: 1;
     }
   }
 
@@ -44,6 +45,10 @@
     row-gap: 10px;
     column-gap: 40px;
     margin-top: 18px;
+
+    @media (max-width: $tabletWidth) {
+      margin-top: 5.33rem;
+    }
   }
 
   &__menu::after {
@@ -77,4 +82,5 @@
   display: flex;
   justify-content: center;
   column-gap: 24px;
+  align-items: center;
 }

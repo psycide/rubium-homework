@@ -29,6 +29,7 @@
     @media (max-width: $tabletWidth) {
       margin-top: 8.53rem;
       grid-template-columns: repeat(auto-fill, 100vw);
+      row-gap: 5.33rem;
     }
   }
 

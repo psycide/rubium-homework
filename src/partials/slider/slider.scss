@@ -7,6 +7,8 @@
 
   @media (max-width: $tabletWidth) {
     height: 66.13rem;
+    margin-top: 10.66rem;
+    margin-bottom: 5.86rem;
   }
 
   @media (max-width: $mobileWidth) {
@@ -20,6 +22,10 @@
     height: 100%;
     width: 100%;
     max-width: 1130px;
+
+    @media (max-width: $tabletWidth) {
+      padding: 0 2.13rem;
+    }
   }
 
   &::before {
@@ -37,32 +43,16 @@
     max-height: 554px;
     z-index: -1;
 
-    @media (max-width: $tabletWidth) {
-
-    }
-  
-    @media (max-width: $mobileWidth) {
-  
-    }
   }
 
   &__bg-image {
     width: 100%;
     height: 100%;
-
     position: absolute;
     z-index: -2;
     top: 0;
     left: 0;
     object-fit: cover;
-
-    @media (max-width: $tabletWidth) {
-
-    }
-  
-    @media (max-width: $mobileWidth) {
-  
-    }
   }
 
   &__button-nav {

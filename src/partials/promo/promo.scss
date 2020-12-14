@@ -12,6 +12,9 @@
   @media (max-width: $tabletWidth) {
     padding: 0;
     border-radius: 0;
+    background: #252525;
+    box-shadow: 0px 1.43243px 3.58108px rgba(0, 0, 0, 0.1);
+    border-radius: 4.2973px;
   }
 
   &__title {
@@ -126,9 +129,6 @@
     width: 100%;
     height: 0;
     opacity: 0.5;
-
-    /* Primary */
-
     border-bottom: 1px solid $primaryColor;
   }
 
