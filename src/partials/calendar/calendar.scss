@@ -81,6 +81,7 @@
   }
 
   &__month {
+    position: relative;
     padding: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -88,7 +89,7 @@
     column-gap: 35px;
   }
 
-  &__day-selector {
+  &__day_current::after {
     // display: none;
     position: absolute;
     content: '';
@@ -103,5 +104,10 @@
 
   &__day_with-event {
     color: $primaryColor;
+  }
+
+  &__day_selected {
+    color: rgba(255, 255, 255, 0.75);
+    background-color: $primaryColor;
   }
 }
