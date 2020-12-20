@@ -1,4 +1,4 @@
-mixin event(bg, time, title, text)
+mixin event(bg, date, time, title, text)
     - let mixinClass = ''
     if attributes.class 
         - mixinClass = ' ' + attributes.class
@@ -7,7 +7,9 @@ mixin event(bg, time, title, text)
     div(class!= 'event' + mixinClass) 
         if bg  
             img.event__bg-img(src=bg, alt='event-bg')
-        p.event__time= time
+        .event__dates
+            span.event__time= time
+            span.event__date= date
         h3.event__title= title
         p.event__text= text
         .event__stat

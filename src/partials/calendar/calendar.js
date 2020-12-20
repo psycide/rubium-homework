@@ -8,7 +8,9 @@ const {
   calendarDayWithEvent,
   calendarDayCurrent,
   calendarDaySelected,
-  calendarWeekDay
+  calendarWeekDay,
+  eventsContainer,
+  eventsItem,
  } = {
   calendarButtonPrev: 'calendar__button_prev',
   calendarButtonNext: 'calendar__button_next',
@@ -19,6 +21,8 @@ const {
   calendarDayCurrent: 'calendar__day_current',
   calendarDaySelected: 'calendar__day_selected',
   calendarWeekDay: 'calendar__week-day',
+  eventsContainer: 'events__container',
+  eventsItem: 'events__item',
  }
 
 class Calendar {
@@ -27,19 +31,22 @@ class Calendar {
     this._node = node;
     this._titleNode = this._node.querySelector(`.${calendarTitle}`);
     this._date = new Date();
-    this._cachedMonths = new Map();
+    this._cachedEvents = new Map();
     this._cachedDayNodes = new Map();
     this._cachedEmptyDayNodes = new Map();
+    this._cachedEventNodes = new Map()
+    this._currentEvents = null;
     this._selectedDay = null;
     this._monthNode = this._node.querySelector(`.${calendarMonth}`);
     this._prevButton = this._node.querySelector(`.${calendarButtonPrev}`);
     this._nextButton = this._node.querySelector(`.${calendarButtonNext}`);
+    this._eventsNode = document.querySelector(`.${eventsContainer}`);
 
 
     this.fillCalendar();
-    this.addDateSwitch();
+    this._showNearestEvents();
 
-    this._monthNode.addEventListener('click', this._daySelectorHandler.bind(this))
+    this._node.addEventListener('click', this._calendarEventHandler.bind(this))
 
   }
 
@@ -54,13 +61,11 @@ class Calendar {
     
     let key = Calendar.getMonthAndYear(firstDayOfMonth);
 
-    if (!this._cachedMonths.has(key)) {
+    if (!this._cachedEvents.has(key)) {
 
-      let response = getDaysFromServer(firstDayOfMonth, lastDayOfMonth);
-      this._cachedMonths.set(key, response)
+      let response = getEventsFromServer(firstDayOfMonth, lastDayOfMonth);
+      this._cachedEvents.set(key, response)
     }
-
-    this._currentDays = this._cachedMonths.get(key);
 
   }
 
@@ -85,6 +90,10 @@ class Calendar {
     if (!this._cachedDayNodes.has(key)) { // если для текущего месяца не было создано элементов, то создаем и кешируем
       let days = []
       let currentDay = (new Date(this._date).getMonth() == new Date().getMonth()) ? this._date.getDate(): null;
+      let events = this._cachedEvents.get(key).filter((item) =>{
+        if(item.date.getFullYear() == this._date.getFullYear()
+          && item.date.getMonth() == this._date.getMonth()) {return true}
+      });
 
       for (let i = 1; i <= Calendar.daysInMonth(this._date); i++) {
 
@@ -92,7 +101,7 @@ class Calendar {
 
         day.classList.add(calendarDay);
 
-        if (this._currentDays[i - 1].haveEvent) {
+        if (events.find((item) => item.date.getDate() == i)) {
           day.classList.add(calendarDayWithEvent);
         }
 
@@ -165,19 +174,47 @@ class Calendar {
 
   }
 
-  // если элемент с событием, то назначаем ему класс
-  _daySelectorHandler(event) { 
+  
+  _calendarEventHandler(event) { 
 
-    if (!event.target.classList.contains(calendarDayWithEvent)) {return}
+    // обрабатывем клики на датах с событиями
+    if (event.target.classList.contains(calendarDayWithEvent)) {
 
-    if (event.target != this._selectedDay && this._selectedDay != null) {this._selectedDay.classList.remove(calendarDaySelected)}
+      if (event.target != this._selectedDay && this._selectedDay != null) {this._selectedDay.classList.remove(calendarDaySelected)}
 
-    this._selectedDay = event.target;
-    event.target.classList.add(calendarDaySelected);
+      this._selectedDay = event.target;
+      event.target.classList.add(calendarDaySelected);
 
-    // здесь нужно сделать запрос на сервер и обновить элементы event
+      let date = new Date(this._date)
+      date.setDate(+event.target.innerText)
+      this.showEvents(date)
+
+    }
+
+    // листаем месяцы
+    if (event.target.classList.contains(calendarButtonPrev)
+    || event.target.parentElement.classList.contains(calendarButtonPrev)) {
+
+      this._date.setDate(0);
+      this._setDaysWithEvents(this._date);
+      this._removeDays();
+      this.fillCalendar();
+
+    }
+
+    if (event.target.classList.contains(calendarButtonNext)
+    || event.target.parentElement.classList.contains(calendarButtonNext)) {
+
+      this._date.setDate(Calendar.daysInMonth(this._date) + 1);
+      this._setDaysWithEvents(this._date);
+      this._removeDays();
+      this.fillCalendar();
+
+    }
 
   }
+
+
 
   fillCalendar() {
     this._getMonth(this._date);
@@ -188,20 +225,80 @@ class Calendar {
 
   }
 
-  addDateSwitch() { 
-    this._prevButton.addEventListener('click', () => {
-      this._date.setDate(0);
-      this._setDaysWithEvents(this._date);
-      this._removeDays();
-      this.fillCalendar();
-    });
+  _showNearestEvents() {
+    // показывает близжайшие события, например при загрузке страницы
+  }
 
-    this._nextButton.addEventListener('click', () => {
-      this._date.setDate(Calendar.daysInMonth(this._date) + 1);
-      this._setDaysWithEvents(this._date);
-      this._removeDays();
-      this.fillCalendar();
-    })
+
+  // создает и возвращает узел из события
+  _createEventNode(event) {
+
+    let eventNode = document.createElement('div');
+
+    eventNode.classList.add('event', 'events__item');
+
+    eventNode.innerHTML = `
+    <div class="event__dates">
+      <span class="event__time">
+        ${event.date.getHours() + ':' + event.date.getMinutes()} 
+      </span>
+      <span class="event__date">
+        ${event.date.getDate()} ${capitalize(this._date.toLocaleDateString("ru-RU", { month: "long" }))}
+      </span>
+    </div>
+    <h3 class="event__title">${event.title}</h3>
+    <p class="event__text">
+      ${event.text}
+    </p>
+    <div class="event__stat">
+        <div class="views event__views"><img class="views__icon" src="./src/svg/icon-eye.svg">
+            <p class="views__count">275</p>
+        </div>
+        <div class="comments event__comments"><img class="comments__icon" src="./src/svg/icon-comments.svg">
+            <p class="comments__count">15</p>
+        </div>
+    </div>`;
+
+    if (event.background) {
+
+      let background = document.createElement('img');
+
+      background.setAttribute('src', event.background);
+      background.setAttribute('alt', 'event-bg');
+      background.classList.add('event__bg-img');
+      eventNode.classList.add('events__item_img')
+      eventNode.prepend(background);
+
+    }
+
+    return eventNode
+
+    }
+
+  // показывает и кеширует события для даты date
+  showEvents(date) {
+
+    let key = Calendar.getDayMonthYear(date);
+
+    if (!this._cachedEventNodes.has(key)) {
+      
+      let events = this._cachedEvents.get(Calendar.getMonthAndYear(this._date))
+      .filter((item) => item.date.getDate() == date.getDate());
+
+      let eventNodes = [];
+
+      events.forEach((item) => eventNodes.push(this._createEventNode(item)));
+      this._cachedEventNodes.set(key, eventNodes);  
+    }
+
+    if (this._currentEvents) this._currentEvents.forEach((item) => item.remove());
+
+    this._currentEvents = this._cachedEventNodes.get(key);
+    this._currentEvents.forEach((item) => this._eventsNode.prepend(item));
+  }
+
+  static getDayMonthYear(date) {
+    return `${date.getDate()} ${date.getMonth()} ${date.getFullYear()}`
   }
 
   static daysInMonth(date) {
@@ -231,22 +328,43 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-//
-function getDaysFromServer(from, to) {
-  let days = [];
-  for (let i = 1; i <= Calendar.daysInMonth(from); i++) {
-    let day = new Date(from);
-    day.setDate(i);
-    days.push({
-      date: new Date(day),
-      haveEvent: false,
-    })
+
+// function getDaysFromServer(from, to) {
+//   let days = [];
+//   for (let i = 1; i <= Calendar.daysInMonth(from); i++) {
+//     let day = new Date(from);
+//     day.setDate(i);
+//     days.push({
+//       date: new Date(day),
+//       haveEvent: false,
+//     })
+//   }
+//   days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
+//   days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
+//   days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
+//   days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
+//   return days;
+// }
+
+function getEventsFromServer(from, to) {
+  let events = [];
+  for (let i = 0; i < 10; i++) {
+    let date = new Date(from);
+    date.setDate(Math.ceil(Math.random() * Calendar.daysInMonth(from)));
+    events.push({
+      date: new Date(date),
+      title: 'Детский мастер-класс',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut',
+      background: '',
+   });
+    events.push({
+      date: new Date(date),
+      title: 'Джазовый концерт',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut',
+      background: './src/img/placeholder.png',
+  });
   }
-  days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
-  days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
-  days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
-  days[Math.round(Math.random() * (days.length - 1))].haveEvent = true;
-  return days;
+  return events
 }
 
 
